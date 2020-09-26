@@ -1,0 +1,11 @@
+$data=array ();
+        $data['category_id'] = $request->category_id;
+        $data['category_name'] = $request->category_name;
+        $data['category_description'] = $request->category_description;
+        $data['publication_status'] = $request->publication_status;
+
+        DB::table('tbl_category')->insert($data);
+
+        Session::put('message', 'Category Successfuly Added');
+
+        return Redirect::to ('/add-category');
